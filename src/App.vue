@@ -3,19 +3,19 @@
     <my-header></my-header>
     <my-tab></my-tab>
     <router-view/>
-    <my-players></my-players>
+    <my-player></my-player>
   </div>
 </template>
 
 <script>
 import MyHeader from '@/components/MyHeader/MyHeader'
 import MyTab from '@/components/MyTab/MyTab'
-import MyPlayers from '@/components/MyPlayer/MyPlayers'
+import MyPlayer from '@/components/MyPlayer/MyPlayer'
 export default {
   components: {
     MyHeader,
     MyTab,
-    MyPlayers
+    MyPlayer
   }
 }
 </script>
