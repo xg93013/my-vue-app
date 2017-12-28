@@ -39,8 +39,15 @@ const MySingerDetail = (resolve) => {
     resolve(module)
   })
 }
+
+const MyUser = (resolve) => {
+  import('@/components/MyUser/MyUser').then((module) => {
+    resolve(module)
+  })
+}
 // 路由详细配置
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -92,6 +99,11 @@ export default new Router({
           component: MySingerDetail
         }
       ]
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: MyUser
     }
   ]
 })

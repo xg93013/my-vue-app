@@ -140,6 +140,9 @@ export default {
       }
       this.currentIndex = Number(index)
       this.$refs.scrollRef.scrollToElement(this.$refs.leftRef[index], 0)
+    },
+    refresh () {
+      this.$refs.scrollRef.refresh()
     }
   },
   computed: {

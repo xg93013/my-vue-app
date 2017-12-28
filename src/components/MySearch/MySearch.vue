@@ -6,24 +6,26 @@
     </div>
     <div class="shortcut-wrapper" v-show="!query" ref="shortcutRef">
       <my-scroll class="shortcut" ref="scrollRef" :data="scrollData" :refreshDelay="refreshDelay">
-        <!-- 热门搜索 -->
-        <div class="hot-key">
-          <h1 class="title">热门搜索</h1>
-          <ul>
-            <li class="item" v-for="item in hotkey" @click="addQuery(item.k)">
-              <span>{{ item.k }}</span>
-            </li>
-          </ul>
-        </div>
-        <!-- 搜索历史 -->
-        <div class="search-history">
-          <div class="title">
-            <span class="title-text">搜索历史</span>
-            <span class="clear" @click="clearHis">
-              <i class="icon-clear"></i>
-            </span>           
+        <div class="short-scroll">
+          <!-- 热门搜索 -->
+          <div class="hot-key">
+            <h1 class="title">热门搜索</h1>
+            <ul>
+              <li class="item" v-for="item in hotkey" @click="addQuery(item.k)">
+                <span>{{ item.k }}</span>
+              </li>
+            </ul>
           </div>
-          <my-search-list :searches="searchHistory" @select="addQuery" @delete="deleteHis"></my-search-list>
+          <!-- 搜索历史 -->
+          <div class="search-history">
+            <div class="title">
+              <span class="title-text">搜索历史</span>
+              <span class="clear" @click="clearHis">
+                <i class="icon-clear"></i>
+              </span>           
+            </div>
+            <my-search-list :searches="searchHistory" @select="addQuery" @delete="deleteHis"></my-search-list>
+          </div>
         </div>
       </my-scroll>
     </div>
@@ -106,7 +108,6 @@ export default {
     // 当有迷你播放器时，调整滚动底部距离
     handlePlaylist (playlist) {
       let bottom = playlist.length > 0 ? '60px' : ''
-
       this.$refs.shortcutRef.style.bottom = bottom
       this.$refs.scrollRef.refresh()
       this.$refs.resultRef.style.bottom = bottom
@@ -141,45 +142,47 @@ export default {
     .shortcut{
       height: 100%;
       overflow: hidden;
-      .hot-key{
-        margin: 0 20px 20px 20px;
-        .title{
-          margin-bottom: 20px;
-          font-size: $font-size-medium;
-          color: $color-text-l;
-        }
-        .item{
-          display: inline-block;
-          padding: 5px 10px;
-          border-radius: 6px;
-          margin: 10px 0px 0 10px;
-          background: $color-highlight-background;
-          font-size: $font-size-medium;
-          color: $color-text-d;
-        }
-      }
-      .search-history{
-        position: relative;
-        margin: 0 20px;
-        .title{
-          // width: 100%;
-          height: 40px;
-          align-items: center;
-          font-size: $font-size-medium;
-          color: $color-text-l;
-          display: flex;
-          .title-text{
-            flex: 1;
+      .short-scroll{
+        .hot-key{
+          margin: 0 20px 20px 20px;
+          .title{
+            margin-bottom: 20px;
+            font-size: $font-size-medium;
+            color: $color-text-l;
           }
-          .clear{
-            @include extend-click();
-            .icon-clear{
-              font-size: $font-size-medium;
-              color: $color-text-d;
-            }          
+          .item{
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin: 10px 0px 0 10px;
+            background: $color-highlight-background;
+            font-size: $font-size-medium;
+            color: $color-text-d;
           }
         }
-      }
+        .search-history{
+          position: relative;
+          margin: 0 20px;
+          .title{
+            // width: 100%;
+            height: 40px;
+            align-items: center;
+            font-size: $font-size-medium;
+            color: $color-text-l;
+            display: flex;
+            .title-text{
+              flex: 1;
+            }
+            .clear{
+              @include extend-click();
+              .icon-clear{
+                font-size: $font-size-medium;
+                color: $color-text-d;
+              }          
+            }
+          }
+        }
+      } 
     }
   }
   .search-result{

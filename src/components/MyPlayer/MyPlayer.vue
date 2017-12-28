@@ -1,5 +1,6 @@
 <template>
   <div v-show="playlist.length > 0" class="my-player">
+    <!-- 正常播放器 -->
     <transition name="normal">
       <div v-show="fullScreen" class="normal-player">
         <!-- 背景图 -->
@@ -80,6 +81,7 @@
       </div>
     </transition>
 
+    <!-- 迷你播放器 -->
     <transition name="mini">
       <div class="mini-player" v-show="!fullScreen" @click="open">
         <div class="icon">

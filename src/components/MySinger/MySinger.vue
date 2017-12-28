@@ -9,11 +9,13 @@ import { getSingerList } from '@/api/singer.js'
 import { createSinger } from '@/assets/js/SingerClass.js'
 import { mapMutations } from 'vuex'
 import MySingerList from '@/components/base/MySingerList/MySingerList'
+import { playlistMixin } from '@/assets/js/mixin.js'
 
 const HOT_TITLE = '热门'
 const HTO_NUM = 10
 
 export default {
+  mixins: [playlistMixin],
   components: {
     MySingerList
   },
@@ -82,6 +84,12 @@ export default {
       })
 
       return hot.concat(others)
+    },
+    // 当有迷你播放器时，调整滚动底部距离
+    handlePlaylist (playlist) {
+      let bottom = playlist.length > 0 ? '100px' : ''
+      this.$refs.singerRef.style.bottom = bottom
+      this.$refs.listRef.refresh()
     }
   },
   created () {
