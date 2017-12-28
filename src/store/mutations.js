@@ -38,9 +38,6 @@ const mutations = {
   },
   [types.SET_FAVORITE_LIST] (state, list) {
     state.favoriteList = list
-  },
-  [types.SET_TESTLIST] (state, list) {
-    state.testList = list
   }
 }
 

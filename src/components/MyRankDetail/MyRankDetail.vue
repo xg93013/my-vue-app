@@ -2,7 +2,7 @@
 
 <template>
   <transition name="slide" class="my-rank-detail">
-    <my-music-list :songs="songs" :title="title" :bg-image="bgImage" :rank="true"></my-music-list>
+    <my-music-lists :songs="songs" :title="title" :bgImage="bgImage" :rank="true"></my-music-lists>
   </transition>
 </template>
 
@@ -10,11 +10,11 @@
 import { mapGetters } from 'vuex'
 import { getRankDetail } from '@/api/rank.js'
 import { createSingerSong } from '@/assets/js/SingerSongClass.js'
-import MyMusicList from '@/components/MyMusicList/MyMusicList'
+import MyMusicLists from '@/components/MyMusicList/MyMusicLists'
 
 export default {
   components: {
-    MyMusicList
+    MyMusicLists
   },
   data () {
     return {

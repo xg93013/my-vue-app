@@ -74,7 +74,7 @@ export default {
       for (let i = 0; i < leftListHeight.length; i++) {
         if (posY >= leftListHeight[i] && posY < leftListHeight[i + 1]) {
           this.currentIndex = i
-          this.diff = leftListHeight[i + 1] + newY // 滚动的下一个title距离顶部的距离
+          this.diff = leftListHeight[i + 1] + newY
           return
         }
       }
@@ -92,7 +92,7 @@ export default {
     this.touch = {}
     this.listenScroll = true
     this.leftListHeight = []
-    this.probeType = 3 // better-scroll 滚动组件 不截留
+    this.probeType = 3
   },
   methods: {
     scroll (pos) {

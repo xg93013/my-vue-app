@@ -1,7 +1,5 @@
-<!--
-圆形进度条组件
-http://www.runoob.com/svg/svg-example.html
- -->
+<!--圆形进度条组件
+http://www.runoob.com/svg/svg-example.html-->
 
 <template>
   <div class="my-progress-circle">

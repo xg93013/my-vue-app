@@ -1,5 +1,5 @@
 <template>
-  <my-scroll class="my-search-result" ref="resultScrollRef" :data="result" :pullup="pullup" @scrollToEnd="scrollToEnd">
+  <my-scroll class="my-search-result" ref="scrollRef" :data="result" :pullup="pullup" @scrollToEnd="scrollToEnd">
     <ul class="result-list">
       <li class="result-item" v-for="item in result" @click="selectItem(item)">
         <div class="icon">
@@ -59,7 +59,7 @@ export default {
     search () {
       this.page = 1
       this.hasMore = true
-      this.$refs.resultScrollRef.scrollTo(0, 0)
+      this.$refs.scrollRef.scrollTo(0, 0)
       search(this.query, this.page, this.perpage, this.zhida).then((res) => {
         if (res.code === 0) {
           this.result = this._formatSearch(res.data)
@@ -136,6 +136,9 @@ export default {
         this.insertSong(item)
       }
       this.$emit('select')
+    },
+    refresh () {
+      this.$refs.scrollRef.refresh()
     }
   }
 }

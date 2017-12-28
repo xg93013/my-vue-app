@@ -28,8 +28,8 @@
       </my-scroll>
     </div>
     <!-- 搜索结果 -->
-    <div class="search-result" v-show="query">
-      <my-search-result ref="resultRef" :query="query" :zhida="zhida" @select="saveHis"></my-search-result>
+    <div class="search-result" v-show="query" ref="resultRef">
+      <my-search-result ref="resultListRef" :query="query" :zhida="zhida" @select="saveHis"></my-search-result>
     </div>
     <!-- 确认对话框 -->
     <my-confirm ref="confirmRef" @confirm="confirm" @cancel="cancel"></my-confirm>
@@ -109,8 +109,8 @@ export default {
 
       this.$refs.shortcutRef.style.bottom = bottom
       this.$refs.scrollRef.refresh()
-
-      this.$refs.resultRef.refresh()
+      this.$refs.resultRef.style.bottom = bottom
+      this.$refs.resultListRef.refresh()
     }
   },
   created () {

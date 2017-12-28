@@ -1,5 +1,5 @@
 <template>
-  <div v-show="playlist.length > 0" class="my-players">
+  <div v-show="playlist.length > 0" class="my-player">
     <transition name="normal">
       <div v-show="fullScreen" class="normal-player">
         <!-- 背景图 -->
@@ -419,7 +419,7 @@ export default {
 @import '~@/assets/scss/const.scss';
 @import '~@/assets/scss/mymixin.scss';
 
-.my-players{
+.my-player{
   .normal-player{
     position:fixed;
     top: 0;

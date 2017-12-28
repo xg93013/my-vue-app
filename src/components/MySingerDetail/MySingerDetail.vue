@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <my-music-list :songs="songs" :title="title" :bg-image="bgImage"></my-music-list>
+    <my-music-lists :songs="songs" :title="title" :bgImage="bgImage"></my-music-lists>
   </transition>
 </template>
 
@@ -8,10 +8,10 @@
 import { mapGetters } from 'vuex'
 import { getSingerDetail } from '@/api/singer.js'
 import { createSingerSong } from '@/assets/js/SingerSongClass.js'
-import MyMusicList from '@/components/MyMusicList/MyMusicList'
+import MyMusicLists from '@/components/MyMusicList/MyMusicLists'
 export default {
   components: {
-    MyMusicList
+    MyMusicLists
   },
   data () {
     return {

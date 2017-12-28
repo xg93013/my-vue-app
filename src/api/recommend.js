@@ -44,19 +44,6 @@ export function getList () {
   .catch(function (error) {
     console.log(error)
   })
-  // return [{
-  //   imgurl: '123',
-  //   creator: {
-  //     name: 'xg'
-  //   },
-  //   dissname: 'xg'
-  // }, {
-  //   imgurl: '123',
-  //   creator: {
-  //     name: 'xg'
-  //   },
-  //   dissname: 'xg'
-  // }]
 }
 
 /**

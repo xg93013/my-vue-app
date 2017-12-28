@@ -40,7 +40,7 @@ export default {
     getDesc (item) {
       return `${item.singer} - ${item.album}`
     },
-    // 对父亲说：我需要这些数据
+    // 传递父组件
     selectItem (item, index) {
       this.$emit('select', item, index)
     },

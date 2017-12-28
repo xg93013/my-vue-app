@@ -41,11 +41,11 @@ export default {
   },
   watch: {},
   methods: {
-    // 对外提供，显示对话框
+    // 显示对话框
     show () {
       this.showFlag = true
     },
-    // 对外提供，隐藏对话框
+    // 隐藏对话框
     hide () {
       this.showFlag = false
     },

@@ -46,12 +46,12 @@ import MySongList from '@/components/base/MySongList/MySongList'
 import MyScroll from '@/components/base/MyScroll/MyScroll'
 import MyLoading from '@/components/base/MyLoading/MyLoading'
 import { mapActions } from 'vuex'
-// import { playlistMixin } from '@/assets/js/mixin.js'
+import { playlistMixin } from '@/assets/js/mixin.js'
 
 const TRANSFORMY_RESERVED = 40
 
 export default {
-  // mixins: [playlistMixin],
+  mixins: [playlistMixin],
   components: {
     MySongList,
     MyScroll,
@@ -72,7 +72,7 @@ export default {
       type: String,
       default: ''
     },
-    imgUrl: {
+    bgImage: {
       type: String,
       default: ''
     },
@@ -120,11 +120,15 @@ export default {
       this.randomPlay({
         list: this.songs
       })
+    },
+    handlePlaylist (playlist) {
+      let bottom = playlist.length > 0 ? '60px' : '0'
+      this.$refs.scrollRef.$el.style.bottom = bottom
     }
   },
   computed: {
     bgStyle () {
-      return `background-image:url(${this.imgUrl})`
+      return `background-image:url(${this.bgImage})`
     }
   },
   created () {

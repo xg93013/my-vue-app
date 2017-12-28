@@ -8,8 +8,8 @@ const MyRecommend = (resolve) => {
     resolve(module)
   })
 }
-const MySinger = (resolve) => {
-  import('@/components/MySinger/MySinger').then((module) => {
+const MySongListDetail = (resolve) => {
+  import('@/components/MySongListDetail/MySongListDetail').then((module) => {
     resolve(module)
   })
 }
@@ -18,21 +18,16 @@ const MyRank = (resolve) => {
     resolve(module)
   })
 }
+const MySinger = (resolve) => {
+  import('@/components/MySinger/MySinger').then((module) => {
+    resolve(module)
+  })
+}
 const MySearch = (resolve) => {
   import('@/components/MySearch/MySearch').then((module) => {
     resolve(module)
   })
 }
-// const MySingerDetail = (resolve) => {
-//   import('@/components/MySingerDetail/MySingerDetail').then((module) => {
-//     resolve(module)
-//   })
-// }
-// const MySongListDetail = (resolve) => {
-//   import('@/components/MySongListDetail/MySongListDetail').then((module) => {
-//     resolve(module)
-//   })
-// }
 const MyRankDetail = (resolve) => {
   import('@/components/MyRankDetail/MyRankDetail').then((module) => {
     resolve(module)
@@ -44,11 +39,7 @@ const MySingerDetail = (resolve) => {
     resolve(module)
   })
 }
-// const MyUser = (resolve) => {
-//   import('@/components/MyUser/MyUser').then((module) => {
-//     resolve(module)
-//   })
-// }
+// 路由详细配置
 export default new Router({
   routes: [
     {
@@ -58,7 +49,14 @@ export default new Router({
     {
       path: '/recommend',
       name: 'recommend',
-      component: MyRecommend
+      component: MyRecommend,
+      children: [
+        {
+          path: ':id',
+          name: 'songListDetail',
+          component: MySongListDetail
+        }
+      ]
     },
     {
       path: '/singer',

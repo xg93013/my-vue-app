@@ -47,25 +47,25 @@
       </div>
 
       <!-- 清空弹窗 -->
-      <!-- <my-confirm ref="confirmRef" @confirm="confirm" @cancel="cancel"></my-confirm> -->
+      <my-confirm ref="confirmRef" @confirm="confirm" @cancel="cancel"></my-confirm>
 
-      <!-- <my-add-song ref="addSongRef"></my-add-song> -->
+      <my-add-song ref="addSongRef"></my-add-song>
     </div>
   </transition>
 </template>
 
 <script>
 import MyScroll from '@/components/base/MyScroll/MyScroll'
-// import MyConfirm from '@/components/base/MyConfirm/MyConfirm'
-// import MyAddSong from '@/components/MyAddSong/MyAddSong'
+import MyConfirm from '@/components/base/MyConfirm/MyConfirm'
+import MyAddSong from '@/components/MyAddSong/MyAddSong'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
 import { myArray } from '@/assets/js/myutils.js'
 
 export default {
   components: {
-    MyScroll
-    // MyConfirm,
-    // MyAddSong
+    MyScroll,
+    MyConfirm,
+    MyAddSong
   },
   data () {
     return {
@@ -170,12 +170,13 @@ export default {
     showConfirm () {
       this.$refs.confirmRef.show()
     },
-    // confirm 清空对话框
+    // 清空播放列表
     confirm () {
       this.deleteSongList()
     },
+    // 取消
     cancel () {
-    //   return
+      this.$refs.confirmRef.hide()
     },
     // 改变播放模式，实质是修改 playlist
     changeMode () {
@@ -202,7 +203,7 @@ export default {
       this.$refs.addSongRef.show()
     }
   },
-  // 过滤器设计目的就是用于简单的文本转换
+  // 过滤器
   filters: {},
   // 若要实现更复杂的数据变换，你应该使用计算属性
   computed: {

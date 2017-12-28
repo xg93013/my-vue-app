@@ -80,20 +80,18 @@ export default {
       })
 
       // 写入 vuex
-      // console.log(item)
       this.setSonglist(item)
     },
     // 当有迷你播放器时，调整滚动底部距离
     handlePlaylist (playlist) {
-      let bottom = playlist.length > 0 ? '60px' : ''
-      this.recommendRef.style.bottom = bottom
+      let bottom = playlist.length > 0 ? '60px' : '0'
+      this.$refs.recommendRef.style.bottom = bottom
       this.$refs.scroll.refresh()
     },
     // 获取轮播图数据
     _getRecommend () {
       getRecommend().then((res) => {
         if (res.code === 0) {
-          // console.log(res)
           this.recommends = res.data.slider
         }
       })

@@ -16,12 +16,12 @@ export default {
     return {}
   },
   props: {
-    searches: Array,
-    default: []
+    searches: {
+      type: Array,
+      default: []
+    }
   },
-  created () {
-    console.log(this.searches)
-  },
+  created () {},
   methods: {
     selectItem (item) {
       this.$emit('select', item)

@@ -34,9 +34,7 @@ const state = {
   // 播放历史（最近播放）
   playHistory: getPlayStorage(),
   // 我的收藏
-  favoriteList: getFavorite(),
-  // 测试状态
-  testList: {}
+  favoriteList: getFavorite()
 }
 
 export default state
