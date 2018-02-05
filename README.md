@@ -1,24 +1,25 @@
 # Vue2.0音乐webapp开发
 
-1、页面ui（Element-UI + sass + vue-router）
-
-Element-UI：是饿了么前端团队推出的一款基于Vue.js 2.0 的桌面端UI框架
+1、页面ui（flex + sass + vue-router）
+	Flex：Flex 布局，可以简便、完整、响应式地实现各种页面布局。
 sass3.0：CSS预处理器，是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。
 Vue-router： vue-router进行路由跳转的处理。
 
-2、接口调用（axios + mockjs）
-
-Axios: axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端.
-Mockjs：独立与后端开发，生成随机数据，拦截 Ajax 请求。
+2、接口调用
+	Node.js：利用 Express 起一个本地测试服务器。
+jsonp：抓取接口数据。
+axios：服务端通讯，结合 Node.js 代理后端请求。
 
 3、状态管理（vuex）
+	Vuex：vuex是一个专门为vue.js设计的集中式状态管理架构。
 
-Vuex：vuex是一个专门为vue.js设计的集中式状态管理架构
+4、页面效果
+	vue-lazyload：第三方图片懒加载库，优化页面加载速度。
+better-scroll：iscroll 的优化版，使移动端滑动体验更加流畅。
 
-4、自动化构建及其他工具
-Vue-cli：Vue 脚手架工具，快速初始化项目代码
-Webpack：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。
-
+5、	自动化构建及其他工具
+vue-cli：Vue 脚手架工具，快速初始化项目代码。
+eslint：代码风格检查工具，规范代码书写。
 
 ## Build Setup
 
