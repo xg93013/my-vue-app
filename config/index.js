@@ -12,7 +12,7 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             // '/api': {
-            //     target: 'http://40.00.100.100:3002/',//设置你调用的接口域名和端口号 别忘了加http
+            //     target: 'https://c.y.qq.com/',//设置你调用的接口域名和端口号 别忘了加http
             //     changeOrigin: true,
             //     pathRewrite: {
             //         '^/api': '/'

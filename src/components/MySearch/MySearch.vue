@@ -22,7 +22,7 @@
               <span class="title-text">搜索历史</span>
               <span class="clear" @click="clearHis">
                 <i class="icon-clear"></i>
-              </span>           
+              </span>
             </div>
             <my-search-list :searches="searchHistory" @select="addQuery" @delete="deleteHis"></my-search-list>
           </div>
@@ -178,11 +178,11 @@ export default {
               .icon-clear{
                 font-size: $font-size-medium;
                 color: $color-text-d;
-              }          
+              }
             }
           }
         }
-      } 
+      }
     }
   }
   .search-result{

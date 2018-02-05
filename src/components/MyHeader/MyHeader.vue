@@ -1,6 +1,6 @@
 <template>
   <div class="my-header">
-    <div class="icon"></div>
+    <!--<div class="icon"></div>-->
     <h1 class="text">Winfred Music</h1>
 
     <!-- 个人中心 -->

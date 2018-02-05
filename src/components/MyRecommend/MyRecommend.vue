@@ -102,6 +102,7 @@ export default {
         if (res.code === 0) {
           this.lists = res.data.list
         }
+        console.log(res)
       })
     },
     // 当首次获取到图片时，Better-scroll 重新计算
