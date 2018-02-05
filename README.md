@@ -1,4 +1,4 @@
-# 技术路线：Vue2.0音乐webapp开发
+# Vue2.0音乐webapp开发
 
 1、页面ui（Element-UI + sass + vue-router）
 
